@@ -8,6 +8,8 @@ gulp.task('test', function () {
     .pipe(jasmine());
 });
 
-gulp.task('default', ['test']);
+gulp.task('watch', function () {
+  gulp.watch('*.coffee', ['test']);
+});
 
-gulp.watch('*.coffee', ['test']);
+gulp.task('default', ['watch']);
